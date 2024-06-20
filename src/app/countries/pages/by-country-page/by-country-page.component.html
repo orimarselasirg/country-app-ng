@@ -1,0 +1,23 @@
+<h2>Por Pais</h2>
+<hr>
+<div class="row">
+  <div class="col">
+    <!-- searchbar -->
+    <!-- (inputEmmit)="searchCountry($event)" -->
+    <shared-search-box
+      placeholder="Ingresa un Pais"
+      (onDebounce)="searchCountry($event)"
+      [initialValue]="initialValueComponent"
+    />
+
+  </div>
+  <div class="row">
+    <div class="col">
+      <shared-loader-component *ngIf="isLoading"/>
+      <countries-country-table
+        [countries]="countryListApi"
+      />
+
+    </div>
+  </div>
+</div>

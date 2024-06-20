@@ -1,0 +1,28 @@
+<h2>Countries</h2>
+<hr>
+<ul class="list-group">
+  <li
+    class="list-group-item"
+    [routerLink]="'countries/by-capital'"
+    [routerLinkActiveOptions]="{exact: true}"
+    routerLinkActive="active"
+  >
+    Por Capital
+  </li>
+  <li
+    class="list-group-item"
+    [routerLink]="'countries/by-country'"
+    [routerLinkActiveOptions]="{exact: true}"
+    routerLinkActive="active"
+  >
+    Por País
+  </li>
+  <li
+    class="list-group-item"
+    [routerLink]="'countries/by-region'"
+    [routerLinkActiveOptions]="{exact: true}"
+    routerLinkActive="active"
+  >
+    Per Región
+  </li>
+</ul>

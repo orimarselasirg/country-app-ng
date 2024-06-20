@@ -1,0 +1,30 @@
+<h2>Paises por region</h2>
+<hr>
+<div class="row">
+  <div class="co text-center">
+    <!-- searchbar -->
+    <!-- (inputEmmit)="searchByRegion($event)" -->
+    <!-- <shared-search-box
+      placeholder="Ingresa una región"
+      (onDebounce)="searchByRegion($event)"
+    /> -->
+    <button
+      *ngFor="let region of regions"
+      class="btn mx-2"
+      [ngClass]="{'btn-outline-primary': selectedRegion === region}"
+      (click)="searchByRegion(region)"
+    >
+      {{ region }}
+    </button>
+
+  </div>
+  <div class="row">
+    <div class="col">
+      <shared-loader-component *ngIf="isLoading"/>
+      <countries-country-table
+        [countries]="countryByRegionListApi"
+      />
+
+    </div>
+  </div>
+</div>
